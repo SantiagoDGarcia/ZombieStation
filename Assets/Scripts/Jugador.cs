@@ -18,10 +18,10 @@ public class Jugador : MonoBehaviour
         float movimientoVertical = Input.GetAxis("Vertical");
 
         if (movimientoVertical>0f){
-            transform.Translate(Vector3.forward  * velocidad * Time.deltaTime);
+            transform.Translate(Vector3.back  * velocidad * Time.deltaTime);
         } 
         if (movimientoVertical<0f) {
-            transform.Translate(Vector3.back * velocidad * Time.deltaTime);
+            transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
         }
         // Movimiento horizontal
         float movimientoHorizontal = Input.GetAxis("Horizontal");
