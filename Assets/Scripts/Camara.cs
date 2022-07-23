@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camara : MonoBehaviour
 {
     private GameObject jugador;
-    private Vector3 offset = new Vector3(14, 19, 22);
+    private Vector3 offset = new Vector3(12, 18, 23);
 
     void Start()
     {
