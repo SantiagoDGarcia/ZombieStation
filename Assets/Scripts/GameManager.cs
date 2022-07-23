@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     // Mientras el juego está activo genera un objetivo aleatorio
     IEnumerator GenerarZombies()
     {
+        int temp = 0;
         while (juegoActivo)
         {
             yield return new WaitForSeconds(intervaloGeneracion);
@@ -55,7 +56,8 @@ public class GameManager : MonoBehaviour
                     //Vector3 espacioRamdom = new Vector3(0, 0, -15);
                     Instantiate(zombieEspecial1, PosicionRamdom(), zombieEspecial1.transform.rotation);
                 }
-            }            
+            }  
+            temp++;          
         }
     }
 
