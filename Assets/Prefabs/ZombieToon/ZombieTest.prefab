@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 3854731346026080390}
   - component: {fileID: 5564437612098057245}
   m_Layer: 0
-  m_Name: ZombieCartoon
+  m_Name: ZombieTest
   m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

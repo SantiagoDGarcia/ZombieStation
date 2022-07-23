@@ -5,6 +5,7 @@ using UnityEngine;
 public class Jugador : MonoBehaviour
 {
     private Rigidbody jugador;
+    public int vida = 100;
     
     private float velocidad = 3;
     void Start()
