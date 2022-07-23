@@ -24,7 +24,6 @@ public class Zombie : MonoBehaviour
     {
         // Rota el zombie hacia el jugador
         transform.LookAt(jugador.transform);
-        enemigo.
         // Mueve el zombie hacia el jugador
         //enemigo.Distance(transform.position, jugador.transform.position, velocidad * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, jugador.transform.position, velocidad * Time.deltaTime);

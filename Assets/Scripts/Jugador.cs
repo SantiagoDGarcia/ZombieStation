@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Jugador : MonoBehaviour
 {
     private Rigidbody jugador;
     public int vida = 100;
+    public Slider vidaVisual;
     
     private float velocidad = 3;
     void Start()
@@ -15,6 +17,10 @@ public class Jugador : MonoBehaviour
 
     void Update()
     {
+
+        // Actualizar barra de vida
+        vidaVisual.GetComponent<Slider>().value = vida;
+
         // Movimiento vertical
         float movimientoVertical = Input.GetAxis("Vertical");
 
