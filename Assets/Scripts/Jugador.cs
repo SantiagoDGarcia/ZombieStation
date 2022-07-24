@@ -5,39 +5,52 @@ using UnityEngine.UI;
 
 public class Jugador : MonoBehaviour
 {
-    private Rigidbody jugador;
-    public int vida = 100;
-    public Slider vidaVisual;
-    
-    private float velocidad = 3;
-    void Start()
+  private Rigidbody jugador;
+  public int vida = 100;
+  public Slider vidaVisual;
+  private Vector3 movimiento;
+  private float velocidad = 5;
+
+  void Start()
+  {
+    jugador = GetComponent<Rigidbody>();
+  }
+
+  void Update()
+  {
+
+    // Actualizar barra de vida
+    vidaVisual.GetComponent<Slider>().value = vida;
+
+    movimiento = Vector3.zero;
+
+    // Movimiento vertical
+    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
     {
-        jugador = GetComponent<Rigidbody>();
+      movimiento.z = -1;
+    }
+    else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+    {
+      movimiento.z = 1;
+    }
+    // Movimiento horizontal
+    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+    {
+      movimiento.x = -1;
+    }
+    else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+    {
+      movimiento.x = 1;
     }
 
-    void Update()
-    {
+  }
+  void FixedUpdate()
+  {
+    Mover(movimiento);
+  }
 
-        // Actualizar barra de vida
-        vidaVisual.GetComponent<Slider>().value = vida;
-
-        // Movimiento vertical
-        float movimientoVertical = Input.GetAxis("Vertical");
-
-        if (movimientoVertical>0f){
-            transform.Translate(Vector3.back  * velocidad * Time.deltaTime);
-        } 
-        if (movimientoVertical<0f) {
-            transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-        }
-        // Movimiento horizontal
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        if (movimientoHorizontal>0f){
-            transform.Translate(Vector3.left * velocidad * Time.deltaTime);
-        } 
-        if (movimientoHorizontal<0f) {
-            transform.Translate(Vector3.right * velocidad * Time.deltaTime);
-        }
-
-    }
+  void Mover(Vector3 direction)
+  {
+    jugador.MovePosition(jugador.position + direction.normalized * velocidad * Time.fixedDeltaTime);
+  }
 }

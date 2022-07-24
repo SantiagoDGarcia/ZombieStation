@@ -5,7 +5,7 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
     private GameObject jugador;
-    private float velocidad = 1.1f;
+    private float velocidad = 1.5f;
 
     private Rigidbody enemigo;
 
