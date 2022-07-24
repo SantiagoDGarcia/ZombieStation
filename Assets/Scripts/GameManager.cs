@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     public int numeroZombies;
     public List<GameObject> listaZombiesNormales;
 
-    private float xMin = -120;
-    private float xMax = -65;
-    private float zMin = -13;
-    private float zMax = 10;
+    private int xMax = 40;
+    private int xMin = -170;
+    private int zMax = 71;
+    private int zMin = -5;
 
     public int numeroOla = 1;
     public bool juegoActivo;
-    private float intervaloGeneracion = 1.5f;
+    private float intervaloGeneracion = 0.5f;
 
     void Start()
     {

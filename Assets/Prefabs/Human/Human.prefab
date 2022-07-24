@@ -989,6 +989,7 @@ GameObject:
   - component: {fileID: 4540229000190281644}
   - component: {fileID: 3269612738581699731}
   - component: {fileID: 7125085366159710290}
+  - component: {fileID: 6486930864329838277}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -1059,10 +1060,24 @@ BoxCollider:
   m_GameObject: {fileID: 1782702501690864755}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9261931, z: 0.80678844}
   m_Center: {x: 0, y: 0.94755703, z: 0.09660578}
+--- !u!64 &6486930864329838277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782702501690864755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1789272960074739661
 GameObject:
   m_ObjectHideFlags: 0
