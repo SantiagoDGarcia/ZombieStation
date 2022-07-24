@@ -11,9 +11,13 @@ public class Jugador : MonoBehaviour
   private Vector3 movimiento;
   private float velocidad = 5;
 
+  private float sensibilidad = 350;
+  private Animator animacion;
+
   void Start()
   {
     jugador = GetComponent<Rigidbody>();
+    animacion = GetComponent<Animator>();
   }
 
   void Update()
@@ -25,32 +29,46 @@ public class Jugador : MonoBehaviour
     movimiento = Vector3.zero;
 
     // Movimiento vertical
-    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-    {
-      movimiento.z = -1;
-    }
-    else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-    {
-      movimiento.z = 1;
+    if (Input.GetKey(KeyCode.W) ){
+        movimiento.z = -1;
+        //transform.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+    } 
+    else if (Input.GetKey(KeyCode.S)){
+        movimiento.z = 1;
     }
     // Movimiento horizontal
-    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-    {
-      movimiento.x = -1;
-    }
-    else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-    {
-      movimiento.x = 1;
+    if (Input.GetKey(KeyCode.D)){
+        movimiento.x = -1;
+    } 
+    else if (Input.GetKey(KeyCode.A) ){
+        movimiento.x = 1;
     }
 
-  }
-  void FixedUpdate()
-  {
-    Mover(movimiento);
+    // Movimiento Apuntar horizonal
+    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) ){
+        float rotation = Input.GetAxis("Horizontal") * sensibilidad;
+        rotation *= Time.deltaTime;
+        transform.Rotate(0, rotation, 0);
+    } 
+
+    // Control de animacion moverse
+    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) ||Input.GetKey(KeyCode.D) ){
+        animacion.SetBool("EstaMoviendose", true);
+    } 
+    else{
+        animacion.SetBool("EstaMoviendose", false);
+    }
+    animacion.SetBool("MordidoZombie", false);
+
   }
 
-  void Mover(Vector3 direction)
-  {
-    jugador.MovePosition(jugador.position + direction.normalized * velocidad * Time.fixedDeltaTime);
-  }
+    void FixedUpdate(){
+        Mover(movimiento);
+        //jugador.transform.LookAt(jugador.transform.position + movimiento);
+    }
+
+    void Mover(Vector3 direction){
+        jugador.MovePosition(jugador.position + direction.normalized * velocidad * Time.fixedDeltaTime);
+    }
 }
