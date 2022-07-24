@@ -16,7 +16,6 @@ public class HacerDanio : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Haciendo daño");
             if(Player.GetComponent<Jugador>().vida > 0)
             {
                 Player.GetComponent<Jugador>().vida -= damage;
