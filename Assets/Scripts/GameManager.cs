@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject zombieEspecial1;
     public int numeroZombies;
     public List<GameObject> listaZombiesNormales;
+    public GameOverScreen GameOverScreen;
+    int maxPlatform = 0;
 
     private int xMax = 40;
     private int xMin = -170;
@@ -27,6 +30,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GameOver()
+    {
+        GameOverScreen.Setup(maxPlatform);
     }
 
     // Genera una posición spawn aleatoria para zombies

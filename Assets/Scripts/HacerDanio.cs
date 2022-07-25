@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HacerDanio : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class HacerDanio : MonoBehaviour
                 animacionZombie.SetBool("EstaAtacando", true);
             } else{
                 animacion.SetBool("EstoyMuerto", true);
+                SceneManager.LoadScene(2);
             }
         }
     }
