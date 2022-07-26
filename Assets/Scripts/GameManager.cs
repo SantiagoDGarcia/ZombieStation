@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public GameObject zombieEspecial1;
     public int numeroZombies;
     public List<GameObject> listaZombiesNormales;
-    public GameOverScreen GameOverScreen;
-    int maxPlatform = 0;
 
     private int xMax = 40;
     private int xMin = -170;
@@ -32,10 +30,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void GameOver()
-    {
-        GameOverScreen.Setup(maxPlatform);
-    }
 
     // Genera una posición spawn aleatoria para zombies
     Vector3 PosicionRamdom()

@@ -5,16 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class HacerDanio : MonoBehaviour
 {
-    public int damage = 12;
+    public int damage = 15;
+    public bool gameOver = false;
     public GameObject Player;
     private Animator animacion;
     private Animator animacionZombie;
+    public GameManager gameManager;
+    public CogerArmas cogerArmas;
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         animacion = Player.GetComponent<Animator>();
         animacionZombie = GetComponent<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        cogerArmas = GameObject.FindGameObjectWithTag("Player").GetComponent<CogerArmas>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +33,9 @@ public class HacerDanio : MonoBehaviour
                 animacionZombie.SetBool("EstaAtacando", true);
             } else{
                 animacion.SetBool("EstoyMuerto", true);
-                SceneManager.LoadScene(2);
+                gameManager.juegoActivo = false;
+                cogerArmas.DesactivarArma();
+                StartCoroutine(Muerte());
             }
         }
     }
@@ -42,6 +49,12 @@ public class HacerDanio : MonoBehaviour
             animacion.SetBool("MordidoZombie", false);
 
         }
+    }
+
+    IEnumerator Muerte()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(2);
     }
 
 }
