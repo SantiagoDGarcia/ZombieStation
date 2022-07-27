@@ -14,6 +14,8 @@ public class HacerDanio : MonoBehaviour
     public GameManager gameManager;
     public CogerArmas cogerArmas;
 
+    public GameObject Daño;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -33,7 +35,8 @@ public class HacerDanio : MonoBehaviour
                 animacionZombie.SetBool("EstaAtacando", true);
                 Player.GetComponent<Jugador>().vida -= damage;
                 animacion.SetBool("MordidoZombie", true);
-                
+                Instantiate(Daño);
+
             } else{
                 animacion.SetBool("EstoyMuerto", true);
                 gameManager.juegoActivo = false;
@@ -47,7 +50,6 @@ public class HacerDanio : MonoBehaviour
         
         if (animacionZombie.GetBool("EstaAtacando") == true)
         {
-            StartCoroutine(Esperar());
             animacionZombie.SetBool("EstaAtacando", false);
 
         }
@@ -57,10 +59,7 @@ public class HacerDanio : MonoBehaviour
         }
     }
 
-    IEnumerator Esperar()
-    {
-        yield return new WaitForSeconds(2);
-    }
+
     IEnumerator Muerte()
     {
         yield return new WaitForSeconds(3);

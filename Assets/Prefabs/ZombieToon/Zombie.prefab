@@ -80,6 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9fb702209a7854fa93f9af648c0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZombieSonido: {fileID: 574182212501174349, guid: 4e92887d565ddcd4db43b483a80cc188,
+    type: 3}
 --- !u!114 &736148167513923323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +100,8 @@ MonoBehaviour:
   Enemigo: {fileID: 1572626394498110495}
   gameManager: {fileID: 0}
   cogerArmas: {fileID: 0}
+  "Da\xF1o": {fileID: 3659099857413296031, guid: 132562d5dbcf6364b8995caadef39f5b,
+    type: 3}
 --- !u!95 &9167331513683768137
 Animator:
   serializedVersion: 4
@@ -1228,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9fb702209a7854fa93f9af648c0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZombieSonido: {fileID: 0}
 --- !u!114 &8337958833827241322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,6 +1251,7 @@ MonoBehaviour:
   Enemigo: {fileID: 0}
   gameManager: {fileID: 0}
   cogerArmas: {fileID: 0}
+  "Da\xF1o": {fileID: 0}
 --- !u!1 &3850007356799195645
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,21 +7,23 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public TextMeshProUGUI puntosTexto;
+    public GameObject GameOver;
+    public GameObject Boton;
 
-    public void Setup(int puntuacion)
+    void Start()
     {
-        gameObject.SetActive(true);
-        puntosTexto.text = puntuacion.ToString() + " Puntos";
+        Instantiate(GameOver);
     }
 
     public void BotonReiniciar()
     {
+        Instantiate(Boton);
         SceneManager.LoadScene(1);
     }
 
     public void BotonMenu()
     {
+        Instantiate(Boton);
         SceneManager.LoadScene(0);
     }
 

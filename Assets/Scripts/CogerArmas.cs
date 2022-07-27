@@ -5,6 +5,7 @@ using UnityEngine;
 public class CogerArmas : MonoBehaviour
 {
     public GameObject[] armas;
+    public GameObject EquiparSonido;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,8 @@ public class CogerArmas : MonoBehaviour
             armas[i].SetActive(false);
         }
         armas[numero].SetActive(true);
+        GameObject equipar = Instantiate(EquiparSonido);
+        Destroy(equipar, 2f);
     }
 
     public void DesactivarArma()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Disparar : MonoBehaviour
 {
+    public GameObject SonidoDisparo;
     //Agregan punto de inicio de donde la bala saldra.
     public GameObject BalaInicio;
     //Agregan Bala Prefab
@@ -19,6 +20,8 @@ public class Disparar : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && Time.time > tiempoSigDisparo)
         {
             tiempoSigDisparo = Time.time + tiempoEspera;
+            GameObject SonidoBala = Instantiate(SonidoDisparo);
+            Destroy(SonidoBala, 1.0f);
             //1-Instanciar la BalaPrefab en las posiciones de BalaInicio
             GameObject BalaTemporal = Instantiate(BalaPrefab, BalaInicio.transform.position, BalaInicio.transform.rotation) as GameObject;
 

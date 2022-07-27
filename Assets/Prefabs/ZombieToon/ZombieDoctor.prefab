@@ -160,8 +160,11 @@ MonoBehaviour:
   damage: 25
   gameOver: 0
   Player: {fileID: 0}
+  Enemigo: {fileID: 0}
   gameManager: {fileID: 0}
   cogerArmas: {fileID: 0}
+  "Da\xF1o": {fileID: 3659099857413296031, guid: 132562d5dbcf6364b8995caadef39f5b,
+    type: 3}
 --- !u!114 &-3727201379759752324
 MonoBehaviour:
   m_ObjectHideFlags: 0
