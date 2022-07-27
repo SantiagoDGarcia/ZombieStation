@@ -10,12 +10,15 @@ public class Disparar : MonoBehaviour
     public GameObject BalaPrefab;
     //Agregar Bala Velocidad
     public float BalaVelocidad;
+    private float tiempoEspera = 0.25f;
+    private float tiempoSigDisparo = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Time.time > tiempoSigDisparo)
         {
+            tiempoSigDisparo = Time.time + tiempoEspera;
             //1-Instanciar la BalaPrefab en las posiciones de BalaInicio
             GameObject BalaTemporal = Instantiate(BalaPrefab, BalaInicio.transform.position, BalaInicio.transform.rotation) as GameObject;
 
@@ -26,7 +29,7 @@ public class Disparar : MonoBehaviour
             rb.AddForce(transform.forward * BalaVelocidad);
 
             //Debemos Destruir la bala
-            Destroy(BalaTemporal, 3.0f);
+            Destroy(BalaTemporal, 2.0f);
         }
     }
 }

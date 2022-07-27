@@ -86570,7 +86570,7 @@ MonoBehaviour:
   BalaInicio: {fileID: 747300948}
   BalaPrefab: {fileID: 47818607572611062, guid: 27639097f30a7db47965a2bcde38f77a,
     type: 3}
-  BalaVelocidad: 1500
+  BalaVelocidad: 1000
 --- !u!4 &9047151585262527919
 Transform:
   m_ObjectHideFlags: 0

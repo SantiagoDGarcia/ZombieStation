@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 1321827966}
   - component: {fileID: -6019968478166040235}
   - component: {fileID: 3737320694226079010}
+  - component: {fileID: 1922397390779505306}
+  - component: {fileID: -3727201379759752324}
   m_Layer: 6
   m_Name: ZombieDoctor
   m_TagString: Enemigo
@@ -143,6 +145,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09adb80d9a8b4334f8a308517edc19a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1922397390779505306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091242709008108106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff750eb3534028448271aac140b7840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  gameOver: 0
+  Player: {fileID: 0}
+  gameManager: {fileID: 0}
+  cogerArmas: {fileID: 0}
+--- !u!114 &-3727201379759752324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091242709008108106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61d02bba543f8e43b22f0107a536e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntosVida: 0
+  vidaMaxima: 20
 --- !u!1 &5091242709008108108
 GameObject:
   m_ObjectHideFlags: 0

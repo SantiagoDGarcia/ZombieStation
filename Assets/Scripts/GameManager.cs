@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public int numeroOla = 1;
     public bool juegoActivo;
-    private float intervaloGeneracion = 0.5f;
+    private float intervaloGeneracion = 1f;
 
     void Start()
     {

@@ -8,6 +8,7 @@ public class HacerDanio : MonoBehaviour
     public int damage = 15;
     public bool gameOver = false;
     public GameObject Player;
+    public GameObject Enemigo;
     private Animator animacion;
     private Animator animacionZombie;
     public GameManager gameManager;
@@ -16,8 +17,9 @@ public class HacerDanio : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        Enemigo = GameObject.FindGameObjectWithTag("Enemigo");
         animacion = Player.GetComponent<Animator>();
-        animacionZombie = GetComponent<Animator>();
+        animacionZombie = Enemigo.GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         cogerArmas = GameObject.FindGameObjectWithTag("Player").GetComponent<CogerArmas>();
     }
@@ -28,9 +30,10 @@ public class HacerDanio : MonoBehaviour
         {
             if(Player.GetComponent<Jugador>().vida > 0)
             {
+                animacionZombie.SetBool("EstaAtacando", true);
                 Player.GetComponent<Jugador>().vida -= damage;
                 animacion.SetBool("MordidoZombie", true);
-                animacionZombie.SetBool("EstaAtacando", true);
+                
             } else{
                 animacion.SetBool("EstoyMuerto", true);
                 gameManager.juegoActivo = false;
@@ -41,7 +44,10 @@ public class HacerDanio : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if (animacionZombie.GetBool("EstaAtacando") == true){
+        
+        if (animacionZombie.GetBool("EstaAtacando") == true)
+        {
+            StartCoroutine(Esperar());
             animacionZombie.SetBool("EstaAtacando", false);
 
         }
@@ -51,6 +57,10 @@ public class HacerDanio : MonoBehaviour
         }
     }
 
+    IEnumerator Esperar()
+    {
+        yield return new WaitForSeconds(2);
+    }
     IEnumerator Muerte()
     {
         yield return new WaitForSeconds(3);
