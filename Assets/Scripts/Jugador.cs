@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Jugador : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Jugador : MonoBehaviour
 
   private Rigidbody jugador;
   public int vida = 100;
+  public int puntaje = 0;
   public Slider vidaVisual;
   private Vector3 movimiento;
   private float velocidad = 5;
@@ -16,18 +18,23 @@ public class Jugador : MonoBehaviour
   private float sensibilidad = 350;
   private Animator animacion;
 
+
+    public TextMeshProUGUI puntajeTxt;
+
   void Start()
   {
         jugador = GetComponent<Rigidbody>();
         animacion = GetComponent<Animator>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-  }
+
+    }
 
   void Update()
   {
+        puntajeTxt.text = puntaje.ToString();
 
-    // Actualizar barra de vida
-    vidaVisual.GetComponent<Slider>().value = vida;
+        // Actualizar barra de vida
+        vidaVisual.GetComponent<Slider>().value = vida;
 
     movimiento = Vector3.zero;
     if (gameManager.juegoActivo == true) {

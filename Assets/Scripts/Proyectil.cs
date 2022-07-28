@@ -9,7 +9,7 @@ public class Proyectil : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        Enemigo = GameObject.FindGameObjectWithTag("Enemigo");
+
     }
 
     void Update()
@@ -20,25 +20,11 @@ public class Proyectil : MonoBehaviour
     {
         if (other.tag == "Enemigo")
         {
-            if (Enemigo.GetComponent<VidaEnemigo>().puntosVida > 0)
+            if (other.GetComponent<VidaEnemigo>().puntosVida > 0)
             {
-                Enemigo.GetComponent<VidaEnemigo>().TakeHit(hit);
+                other.GetComponent<VidaEnemigo>().TakeHit(hit);
                 Destroy(gameObject);
             }
         }
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("tuñaña")
-            
-        var enemigo = collision.collider.GetComponent<VidaEnemigo>();
-
-        if (enemigo)
-        {
-            enemigo.TakeHit(hit);
-        }
-        Destroy(gameObject);
-            
-    }*/
 }

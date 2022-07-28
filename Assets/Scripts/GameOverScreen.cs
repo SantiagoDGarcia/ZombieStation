@@ -9,10 +9,19 @@ public class GameOverScreen : MonoBehaviour
 {
     public GameObject GameOver;
     public GameObject Boton;
+    public TextMeshProUGUI puntajeGOTxt;
+    public string puntajeGO;
 
     void Start()
     {
+        puntajeGO = GameObject.FindGameObjectWithTag("Player").GetComponent<Jugador>().puntaje.ToString(); ;
+        SetPuntaje(puntajeGO);
         Instantiate(GameOver);
+    }
+
+    public void SetPuntaje(string puntaje)
+    {
+        puntajeGOTxt.text = puntaje + " Puntos!";
     }
 
     public void BotonReiniciar()

@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9fb702209a7854fa93f9af648c0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZombieSonido: {fileID: 574182212501174349, guid: 4e92887d565ddcd4db43b483a80cc188,
+    type: 3}
 --- !u!114 &3737320694226079010
 MonoBehaviour:
   m_ObjectHideFlags: 0

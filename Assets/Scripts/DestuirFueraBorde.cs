@@ -18,7 +18,6 @@ public class DestuirFueraBorde : MonoBehaviour
         // Si sale del suelo, se destruye
         else if (transform.position.y < limiteInferior)
         {
-            Debug.Log(transform.position.y);
             Destroy(gameObject);
         }
 

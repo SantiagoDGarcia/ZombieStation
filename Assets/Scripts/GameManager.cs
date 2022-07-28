@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public int numeroZombies;
     public List<GameObject> listaZombiesNormales;
 
-    private int xMax = 40;
-    private int xMin = -170;
-    private int zMax = 71;
+    private int xMax = -10;
+    private int xMin = -125;
+    private int zMax = 50;
     private int zMin = -5;
 
     public int numeroOla = 1;

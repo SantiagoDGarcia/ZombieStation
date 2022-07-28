@@ -32,9 +32,9 @@ public class HacerDanio : MonoBehaviour
         {
             if(Player.GetComponent<Jugador>().vida > 0)
             {
-                animacionZombie.SetBool("EstaAtacando", true);
+                //animacionZombie.SetBool("EstaAtacando", true);
                 Player.GetComponent<Jugador>().vida -= damage;
-                animacion.SetBool("MordidoZombie", true);
+                //animacion.SetBool("MordidoZombie", true);
                 Instantiate(Daño);
 
             } else{
@@ -47,16 +47,15 @@ public class HacerDanio : MonoBehaviour
     }
 
     void FixedUpdate(){
-        
-        if (animacionZombie.GetBool("EstaAtacando") == true)
-        {
+        /*
+        if (animacionZombie.GetBool("EstaAtacando") == true){
             animacionZombie.SetBool("EstaAtacando", false);
 
         }
         if (animacion.GetBool("MordidoZombie") == true){
             animacion.SetBool("MordidoZombie", false);
 
-        }
+        }*/
     }
 
 
