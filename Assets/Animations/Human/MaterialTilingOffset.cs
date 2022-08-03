@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace BLINK.Tools
 {
+#if UNITY_EDITOR
     public class MaterialTilingOffset : EditorWindow
     {
         
@@ -157,4 +158,5 @@ namespace BLINK.Tools
             }
         }
     }
+#endif
 }
